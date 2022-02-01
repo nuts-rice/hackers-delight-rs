@@ -1,0 +1,12 @@
+[package]
+name = "hackers-delight-rs"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+libc = "^0"
+rand = {version = "^0", derfault_features = false}
+rand_core = {version = "^0", default_features = false}
+rand_isaac = {version = "^0", default_features = false}
