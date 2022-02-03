@@ -107,7 +107,28 @@ pub fn population_cnt(mut x: u32) -> u32 {
     x >> 24
 }
 
+pub fn ntz1(mut x: u32) -> u32 {
+    return 32 - nlz(!x & (x - 1));
+}
 
+pub fn ntz2(mut x: u32) -> u32 {
+    return population_cnt(!x & (x - 1));
+}
+
+
+//Snoob: bit shifting for continous 1s or 0s
+// given that theres subsets of 1s or 0s, we can find rightmost continous group of 1s in x and following 0s
+// then we can "increment" that quantity to the next value that has the same number of 1s
+pub fn snoob0(mut x: i32) -> i32 {
+    let mut smallest = 0;
+    let mut ripple  = 0;
+    let mut ones = 0;
+    smallest = x & -x;
+    ripple = x + smallest;
+    ones = x ^ ripple;
+    ones = (ones >> 2) / smallest;
+    return ripple | ones;
+}
 
 #[cfg_attr(not(target_arch = "x86_64"), test_case)]
 #[cfg_attr(not(target_arch = "riscv64"),test)]
