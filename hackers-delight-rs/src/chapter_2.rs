@@ -138,3 +138,13 @@ fn test_2_1(){
     assert_eq!(formula_trailing_1_to_0(0b10100111), (0b10100000));
     assert_eq!(formula_trailing_0_to_1(0b10101000), (0b10101111));
 }
+
+#[cfg_attr(not(target_arch = "x86_64"), test_case)]
+#[cfg_attr(not(target_arch = "riscv64"),test)]
+fn test_basics2() {
+    assert_eq!(ntz(12), 2);
+    assert_eq!(ntz1(12), 2);
+    assert_eq!(ntz2(12), 2);
+    assert_eq!(ntz(123), 0);
+    assert_eq!(ntz(21), 0);
+}
