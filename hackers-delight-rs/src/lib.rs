@@ -8,7 +8,7 @@ extern crate rand_core;
 extern crate rand_isaac;
 
 pub mod chapter_2;
-
+pub mod chapter_3;
 
 #[cfg(target_arch = "x86_64")]
 use std::{ops::{Add, BitAnd, BitOr, BitOrAssign, BitXor, Not, Shl, ShlAssign, Shr, ShrAssign, Sub}, hash::{Hash, Hasher}, cmp::{Ord, Ordering, PartialOrd}, fmt::{Binary, Display, Formatter, LowerHex, Octal, UpperHex}};
@@ -33,3 +33,4 @@ macro_rules! implement_from {
         }
     };
 }
+
